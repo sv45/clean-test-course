@@ -43,6 +43,20 @@ describe('Test Order', () => {
               data: 5,
             },
           });
+        case `${API_URL}/api/tax/test-fun/5`:
+          return Promise.resolve({
+            data: {
+              status: 'success',
+              data: 0.86,
+            },
+          });
+        case `${API_URL}/api/total/test-fun/5`:
+          return Promise.resolve({
+            data: {
+              status: 'success',
+              data: 10.86,
+            },
+          });
         default:
           return Promise.resolve({
             data: {
