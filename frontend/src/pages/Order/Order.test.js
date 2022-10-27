@@ -46,15 +46,42 @@ describe('Test Order', () => {
     });
   });
 
-  it('Test Delivery Fee', async () => {
+  test('Test Delivery Fee', async () => {
     //Add a Test to verify that delivery fee shows up here
-    //Act: TODO
-    //Assert: TODO
+    //Act:
+    //Call the page
+    render(
+      <OrderContext.Provider value={{ orderName, orderItems }}>
+        <Order />
+      </OrderContext.Provider>
+    );
+    //Assert: replace the return true.
+    await waitFor(() => {
+      return true;
+    });
   });
 
-  it('Test Update Delivery Fee', async () => {
+  test('Test Update Delivery Fee', async () => {
     //Modify the delivery distance and verify that the delivery fee is updated
-    //Act: TODO
-    //Assert: TODO
+    //Act:
+    //Call the page
+    render(
+      <OrderContext.Provider value={{ orderName, orderItems }}>
+        <Order />
+      </OrderContext.Provider>
+    );
+
+    //ACT
+    //Update the Delivery distance by choosing the 5 mile option from the drop down
+    userEvent.selectOptions(
+      // Find the select element, like a real user would.
+      screen.getByRole('combobox'),
+      // Find and select the 5 mile option, like a real user would.
+      screen.getByRole('option', { name: '5 miles' })
+    );
+    //Assert: replace the return true.
+    await waitFor(() => {
+      return true;
+    });
   });
 });
