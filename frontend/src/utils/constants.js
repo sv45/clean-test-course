@@ -1,1 +1,1 @@
-export const API_URL = 'http://hangry-api-dev.us-east-1.elasticbeanstalk.com';
+export const API_URL = 'http://hangryapi-env.eba-tnzipqqq.us-east-1.elasticbeanstalk.com/';
